@@ -26,6 +26,12 @@ spring:
       testOnReturn: false
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.37.128:9300
+      cluster-name: test
+      repositories:
+        enabled: true
 mybatis-plus:
   mapper-locations: classpath:mappers/*.xml
   type-aliases-package: com.tigrex.geo.entity

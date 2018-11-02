@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Data
 @Accessors(chain = true)
 @Document(indexName = "index_entity", type = "tstype")
-public class User implements Serializable {
+public class UserEl implements Serializable {
 
     private static final long serialVersionUID = -763638353551774166L;
 

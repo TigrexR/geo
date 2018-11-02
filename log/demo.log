@@ -1,1 +1,5 @@
 2018-11-02 11:26:20,996 INFO (StartupInfoLogger.java:59)- Started GeoApplication in 3.207 seconds (JVM running for 4.391)
+2018-11-02 14:41:07,564 INFO (StartupInfoLogger.java:50)- Starting KnowledgeTest on QVYPPTL5M5IJDBO with PID 6364 (started by Administrator in F:\WorkSpace\project\geo)
+2018-11-02 14:41:07,565 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.0.BUILD-SNAPSHOT, Spring v5.1.2.RELEASE
+2018-11-02 14:41:07,569 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2018-11-02 14:41:14,322 INFO (StartupInfoLogger.java:59)- Started KnowledgeTest in 7.531 seconds (JVM running for 9.626)

@@ -1,0 +1,8 @@
+2018-11-01 20:04:58,460 INFO (StartupInfoLogger.java:59)- Started BoxTest in 6.575 seconds (JVM running for 8.11)
+2018-11-01 20:57:22,800 INFO (StartupInfoLogger.java:50)- Starting BoxTest on QVYPPTL5M5IJDBO with PID 7836 (started by Administrator in F:\WorkSpace\project\geo)
+2018-11-01 20:57:22,804 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.0.BUILD-SNAPSHOT, Spring v5.1.2.RELEASE
+2018-11-01 20:57:22,809 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2018-11-01 20:57:28,285 INFO (StartupInfoLogger.java:59)- Started BoxTest in 6.593 seconds (JVM running for 7.921)
+2018-11-01 21:28:55,672 INFO (StartupInfoLogger.java:50)- Starting BoxTest on QVYPPTL5M5IJDBO with PID 2704 (started by Administrator in F:\WorkSpace\project\geo)
+2018-11-01 21:28:55,675 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.0.BUILD-SNAPSHOT, Spring v5.1.2.RELEASE
+2018-11-01 21:28:55,679 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default

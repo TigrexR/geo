@@ -1,0 +1,11 @@
+2018-11-01 17:14:38,673 INFO (UserController.java:30)- abf6e079-526c-4694-895e-b25014bdb879
+2018-11-01 17:14:38,696 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id,name,age FROM user WHERE id=? 
+2018-11-01 17:14:38,712 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-11-01 17:14:38,727 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-11-01 17:14:53,194 INFO (UserController.java:30)- abf6e079-526c-4694-895e-b25014bdb879
+2018-11-01 17:14:53,195 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id,name,age FROM user WHERE id=? 
+2018-11-01 17:14:53,195 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-11-01 17:14:53,197 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-11-01 20:04:52,836 INFO (StartupInfoLogger.java:50)- Starting BoxTest on QVYPPTL5M5IJDBO with PID 7852 (started by Administrator in F:\WorkSpace\project\geo)
+2018-11-01 20:04:52,839 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.0.BUILD-SNAPSHOT, Spring v5.1.2.RELEASE
+2018-11-01 20:04:52,841 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default

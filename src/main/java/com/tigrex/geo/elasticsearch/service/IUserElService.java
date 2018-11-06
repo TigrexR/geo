@@ -6,4 +6,6 @@ public interface IUserElService {
 
     boolean save(UserEl user);
 
+    boolean exist(UserEl user);
+
 }

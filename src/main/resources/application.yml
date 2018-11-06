@@ -28,8 +28,8 @@ spring:
       maxOpenPreparedStatements: 20
   data:
     elasticsearch:
-      cluster-nodes: 192.168.37.128:9300
-      cluster-name: test
+      cluster-nodes: 192.168.37.128:9301
+      cluster-name: elasticsearch
       repositories:
         enabled: true
 mybatis-plus:

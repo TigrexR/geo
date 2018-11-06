@@ -102,7 +102,6 @@
         </dependency>
         <!-- =====================================END=================================================== -->
 
-
         <!-- shiro -->
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
@@ -110,6 +109,14 @@
 			<version>1.4.0</version>
 		</dependency>
 		<!-- ======================================END============================================== -->
+
+		<!-- netty -->
+		<!--<dependency>-->
+			<!--<groupId>io.netty</groupId>-->
+			<!--<artifactId>netty-all</artifactId>-->
+			<!--<version>5.0.0.Alpha2</version>-->
+		<!--</dependency>-->
+		<!-- ======================================END================================================ -->
 
 		<!-- baidu validator 入参数据校验 -->
 		<dependency>
@@ -147,12 +154,20 @@
 		</dependency>
 		<!-- =====================================END================================================== -->
 
+		<!-- 公共组件 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.51</version>
+		</dependency>
+
 		<dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.4</version>
             <scope>provided</scope>
         </dependency>
+		<!-- ========================================END===================================================== -->
 
 	</dependencies>
 

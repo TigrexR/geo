@@ -18,4 +18,9 @@ public class UserElService implements IUserElService {
         return true;
     }
 
+    @Override
+    public boolean exist(UserEl user) {
+        return userRepository.existsById(user.getId().longValue());
+    }
+
 }

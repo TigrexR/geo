@@ -19,15 +19,24 @@ public class UserElController {
     @Autowired
     private IUserElService userService;
 
-    @PostMapping(value = "/saveUser")
+    @GetMapping(value = "/saveUser")
     public UserEl saveUser(
             HttpServletRequest request,
             HttpServletResponse response,
             UserEl user){
-        user.setId(1).setName("george").setAge(13);
+        user.setName("george").setAge(13);
         logger.info(user.toString());
         userService.save(user);
         return user;
+    }
+
+    @GetMapping(value = "/existUser")
+    public boolean existUser(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            UserEl user){
+        logger.info(user.toString());
+        return userService.exist(user);
     }
 
 }

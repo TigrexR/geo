@@ -1,1 +1,5 @@
-2018-11-06 12:57:23,275 INFO (UserElController.java:38)- UserEl(id=3, name=null, age=null)
+2018-11-06 16:01:59,558 INFO (StartupInfoLogger.java:59)- Started KnowledgeTest in 9.135 seconds (JVM running for 10.642)
+2018-11-06 16:02:37,346 INFO (StartupInfoLogger.java:50)- Starting KnowledgeTest on QVYPPTL5M5IJDBO with PID 3752 (started by Administrator in F:\WorkSpace\project\geo)
+2018-11-06 16:02:37,347 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.0.BUILD-SNAPSHOT, Spring v5.1.2.RELEASE
+2018-11-06 16:02:37,352 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2018-11-06 16:02:46,722 INFO (StartupInfoLogger.java:59)- Started KnowledgeTest in 10.522 seconds (JVM running for 12.535)

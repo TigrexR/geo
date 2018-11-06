@@ -17,7 +17,7 @@ public class UserElController {
     private static final Logger logger = LoggerFactory.getLogger(UserElController.class);
 
     @Autowired
-    private IUserElService userService;
+    private IUserElService userElService;
 
     @PostMapping(value = "/saveUser")
     public UserEl saveUser(
@@ -26,7 +26,7 @@ public class UserElController {
             UserEl user){
         user.setId(1).setName("george").setAge(13);
         logger.info(user.toString());
-        userService.save(user);
+        userElService.save(user);
         return user;
     }
 

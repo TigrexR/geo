@@ -1,5 +1,1 @@
-2018-11-02 20:21:59,267 INFO (StartupInfoLogger.java:59)- Started GeoApplication in 5.86 seconds (JVM running for 6.997)
-2018-11-02 20:24:59,160 INFO (StartupInfoLogger.java:50)- Starting GeoApplication on QVYPPTL5M5IJDBO with PID 7772 (F:\WorkSpace\project\geo\target\classes started by Administrator in F:\WorkSpace\project\geo)
-2018-11-02 20:24:59,163 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.0.BUILD-SNAPSHOT, Spring v5.1.2.RELEASE
-2018-11-02 20:24:59,165 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
-2018-11-02 20:25:03,876 INFO (StartupInfoLogger.java:59)- Started GeoApplication in 5.316 seconds (JVM running for 6.352)
+2018-11-03 19:18:42,988 INFO (StartupInfoLogger.java:59)- Started GeoApplication in 36.813 seconds (JVM running for 38.312)

@@ -1,9 +1,0 @@
-2018-11-01 15:52:19,401 INFO (StartupInfoLogger.java:59)- Started GeoApplication in 3.049 seconds (JVM running for 4.074)
-2018-11-01 15:52:33,772 INFO (UserController.java:31)- ccab45ed-b349-4d11-9c8e-8254c668de27
-2018-11-01 15:52:33,798 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id,name,age FROM user WHERE id=? 
-2018-11-01 15:52:33,818 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
-2018-11-01 15:52:33,832 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
-2018-11-01 15:57:59,386 INFO (StartupInfoLogger.java:50)- Starting GeoApplication on QVYPPTL5M5IJDBO with PID 7224 (F:\WorkSpace\project\geo\target\classes started by Administrator in F:\WorkSpace\project\geo)
-2018-11-01 15:57:59,402 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.0.BUILD-SNAPSHOT, Spring v5.1.2.RELEASE
-2018-11-01 15:57:59,405 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
-2018-11-01 15:58:01,911 INFO (StartupInfoLogger.java:59)- Started GeoApplication in 3.084 seconds (JVM running for 4.012)

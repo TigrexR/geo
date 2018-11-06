@@ -12,7 +12,7 @@ public class GeoApplicationTests {
 	@Test
 	public void contextLoads() {
 
-		System.out.println("hello");
+		System.out.println("hello world!");
 
 	}
 

@@ -7,10 +7,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.*;
+import java.util.concurrent.locks.ReentrantLock;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class KnowledgeTest {
+    
+    int status = 1;
 
     @Test
     public void stringTest(){
@@ -84,6 +87,28 @@ public class KnowledgeTest {
         integers.add(2);
         integers.add(3);
         System.out.println(integers.toString());
+    }
+
+    @Test
+    public void lockTest(){
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ReentrantLock lock = new ReentrantLock();
+                lock.lock();
+                try {
+                    if(status == 1){
+                        status = status + 1;
+                    } else {
+                        status = status - 1;
+                    }
+                    System.out.println(status);
+                } finally {
+                    lock.unlock();
+                }
+            }
+        });
+        thread.start();
     }
 
 }

@@ -16,27 +16,27 @@ public class UserElController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserElController.class);
 
-    @Autowired
-    private IUserElService userElService;
-
-    @GetMapping(value = "/saveUser")
-    public UserEl saveUser(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            UserEl user){
-        user.setName("george").setAge(13);
-        logger.info(user.toString());
-        userElService.save(user);
-        return user;
-    }
-
-    @GetMapping(value = "/existUser")
-    public boolean existUser(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            UserEl user){
-        logger.info(user.toString());
-        return userService.exist(user);
-    }
+//    @Autowired
+//    private IUserElService userElService;
+//
+//    @GetMapping(value = "/saveUser")
+//    public UserEl saveUser(
+//            HttpServletRequest request,
+//            HttpServletResponse response,
+//            UserEl user){
+//        user.setName("george").setAge(13);
+//        logger.info(user.toString());
+//        userElService.save(user);
+//        return user;
+//    }
+//
+//    @GetMapping(value = "/existUser")
+//    public boolean existUser(
+//            HttpServletRequest request,
+//            HttpServletResponse response,
+//            UserEl user){
+//        logger.info(user.toString());
+//        return userElService.exist(user);
+//    }
 
 }

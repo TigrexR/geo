@@ -25,4 +25,7 @@ public class User implements Serializable {
     @TableField(value = "age")
     private Integer age;
 
+    @TableField(value = "password")
+    private Integer password;
+
 }

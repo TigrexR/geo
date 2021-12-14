@@ -2,6 +2,10 @@ package com.tigrex.geo.controller;
 
 import com.tigrex.geo.entity.User;
 import com.tigrex.geo.service.IUserService;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +35,23 @@ public class UserController {
 
         User george = userService.getById(userId);
         return george;
+    }
+
+    @RequestMapping(value = "login")
+    public String login (String name,
+                         String password) {
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken token = new UsernamePasswordToken(name, password);
+        token.setRememberMe(false);
+
+        try {
+            subject.login(token);
+        } catch (AuthenticationException e) {
+            e.printStackTrace();
+//            rediect.addFlashAttribute("errorText", "您的账号或密码输入错误!");
+            return "{\"Msg\":\"您的账号或密码输入错误\",\"state\":\"failed\"}";
+        }
+        return "登陆成功";
     }
 
 }

@@ -1,0 +1,14 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.home": "C:\\Program Files\\Java\\jdk-11.0.12",
+    "maven.terminal.useJavaHome": true,
+    "maven.terminal.customEnv": [
+        {
+            "environmentVariable": "JAVA_HOME",
+            "value": "C:\\Program Files\\Java\\jdk-11.0.12"
+        }
+    ],
+    "java.project.sourcePaths": [
+        "geo-service\\src\\main\\java"
+    ]
+}

@@ -1,11 +1,11 @@
-package com.tigrex.geo.entity.dto;
-
-import java.io.Serializable;
+package com.tigrex.geo.entity.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * @author linus
@@ -14,9 +14,13 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class UserDTO implements Serializable{
-    
+public class UserVO implements Serializable{
+
     private static final long serialVersionUID = 1L;
 
+    private Integer id;
+    private String code;
     private String name;
+    private Integer age;
+    private String gender;
 }

@@ -6,5 +6,4 @@ public interface MyList<E> extends Collection<E> {
 
     @Override
     boolean isEmpty();
-
 }

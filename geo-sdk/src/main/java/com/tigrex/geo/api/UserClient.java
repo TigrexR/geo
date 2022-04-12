@@ -1,6 +1,6 @@
 package com.tigrex.geo.api;
 
-import com.tigrex.geo.entity.dto.UserDto;
+import com.tigrex.geo.entity.dto.UserDTO;
 import com.tigrex.geo.entity.query.UserQuery;
 
 import org.springframework.cloud.openfeign.FeignClient;
@@ -27,5 +27,5 @@ public interface UserClient {
      * @return user
      */
     @RequestMapping(value = "/user/getUser", method = RequestMethod.POST)
-	UserDto getUser(@RequestBody() UserQuery userQuery);
+    UserDTO getUser(@RequestBody() UserQuery userQuery);
 }

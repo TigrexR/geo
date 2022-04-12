@@ -34,9 +34,9 @@ public class ReflectionTest {
 
 
         ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
-        ClassLoader platformClassLoader = ClassLoader.getPlatformClassLoader();
-        System.out.println(systemClassLoader.getParent().getName());
-        System.out.println(platformClassLoader.getName());
+//        ClassLoader platformClassLoader = ClassLoader.getPlatformClassLoader();
+//        System.out.println(systemClassLoader.getParent().getName());
+//        System.out.println(platformClassLoader.getName());
 
     }
 

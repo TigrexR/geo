@@ -2,8 +2,7 @@ package com.tigrex.geo.controller.map;
 
 import java.util.*;
 
-import com.tigrex.geo.entity.User;
-
+import com.tigrex.geo.entity.po.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.StringUtils;
 
@@ -11,7 +10,7 @@ public class MapTest {
 
     @Test
     public void testOne(){
-        User user = new User(1, "123", 3);
+        User user = new User(1, "123", "123", 3, "123");
         Map<Integer, User> map = new HashMap(2);
         map.put(1, user);
         map.put(2, user);

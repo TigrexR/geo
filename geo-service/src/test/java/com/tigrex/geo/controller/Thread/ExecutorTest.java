@@ -6,8 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.*;
 
-import com.tigrex.geo.entity.User;
-
+import com.tigrex.geo.entity.po.User;
 import org.junit.jupiter.api.Test;
 
 public class ExecutorTest {

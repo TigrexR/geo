@@ -49,7 +49,7 @@ public class KnowledgeTest {
         Set<Integer> integerSet = new TreeSet<>();
         System.out.println(integerSet.getClass());
 
-        List<Integer> integerList = List.of(1, 3);
+        List<Integer> integerList = Arrays.asList(1, 3);
         System.out.println(integerList.getClass());
 
         Queue<Integer> integerQueue = new ArrayDeque<>();

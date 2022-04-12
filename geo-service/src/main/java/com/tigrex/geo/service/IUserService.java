@@ -13,5 +13,5 @@ public interface IUserService {
      * @param userQuery
      * @return userBO
      */
-    public UserBO getUser(UserQuery userQuery);
+    UserBO getUser(UserQuery userQuery);
 }

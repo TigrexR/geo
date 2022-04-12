@@ -1,14 +1,13 @@
 package com.tigrex.geo.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.tigrex.geo.entity.dto.UserDto;
+import com.tigrex.geo.entity.bo.UserBO;
+import com.tigrex.geo.entity.dto.UserDTO;
 import com.tigrex.geo.entity.query.UserQuery;
 import com.tigrex.geo.service.IUserService;
 import com.tigrex.geo.utils.JacksonUtils;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,21 +20,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/user")
 public class UserController {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
-
     @Autowired
     private IUserService userService;
+    @Autowired
+    private RedisTemplate<String, UserBO> userRedisTemplate;
 
-    @RequestMapping(value = "/user/hello", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String hello() {
         return "hello world!";
     }
 
     @RequestMapping(value = "/getUser", method = RequestMethod.POST)
-    public UserDto getUser(
-            @RequestBody() UserQuery userQuery) throws JsonProcessingException {
-        logger.info(JacksonUtils.getJackson().writeValueAsString(userQuery));
-        return JacksonUtils.getJackson().convertValue(userService.getUser(userQuery), UserDto.class);
+    public UserDTO getUser(@RequestBody() UserQuery userQuery) {
+        return JacksonUtils.getJackson().convertValue(userService.getUser(userQuery), UserDTO.class);
     }
 
+    @RequestMapping(value = "/getUserFromRedis", method = RequestMethod.POST)
+    public UserDTO getUserFromRedis(@RequestBody() UserQuery userQuery) {
+        return JacksonUtils.getJackson().convertValue(userRedisTemplate.opsForValue().get("users::" + userQuery.getId()),
+                UserDTO.class);
+    }
 }

@@ -22,7 +22,7 @@
 	</properties>
 
 	<dependencies>
-		<!-- spingboot基础配置 -->
+		<!-- springboot基础配置 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -77,35 +77,46 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
-			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.redisson</groupId>
-			<artifactId>redisson-spring-boot-starter</artifactId>
-			<version>${redisson.version}</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.redisson</groupId>-->
+<!--			<artifactId>redisson-spring-boot-starter</artifactId>-->
+<!--			<version>${redisson.version}</version>-->
+<!--		</dependency>-->
 		<!-- =====================================END=================================================== -->
 
         <!-- elasticsearch -->
-        <!-- <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-        </dependency> -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>-->
+<!--        </dependency>-->
         <!-- =====================================END=================================================== -->
 
 		<!-- mongodb -->
-		<!--<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-mongodb</artifactId>-->
+<!--		</dependency>-->
+		<!-- =====================================END=================================================== -->
+
+		<!-- kafka -->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<!-- =====================================END=================================================== -->
 
 		<!-- netty -->
-		<!--<dependency>
-			<groupId>io.netty</groupId>
-			<artifactId>netty-all</artifactId>
-			<version>5.0.0.Alpha2</version>
-		</dependency>-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>5.0.0.Alpha2</version>
+        </dependency>
 		<!-- ======================================END================================================ -->
 
 		<!-- open-feign -->

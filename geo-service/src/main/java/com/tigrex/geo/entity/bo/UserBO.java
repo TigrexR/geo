@@ -19,8 +19,8 @@ public class UserBO implements Serializable{
     private static final long serialVersionUID = 1L;
 
     private Integer id;
-
+    private String code;
     private String name;
-
     private Integer age;
+    private String gender;
 }

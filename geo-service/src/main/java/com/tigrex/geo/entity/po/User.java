@@ -23,14 +23,14 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     private static final long serialVersionUID = -763638353551774166L;
-
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
-
+    @TableField(value = "code")
+    private String code;
     @TableField(value = "name")
     private String name;
-
     @TableField(value = "age")
     private Integer age;
-
+    @TableField(value = "gender")
+    private String gender;
 }

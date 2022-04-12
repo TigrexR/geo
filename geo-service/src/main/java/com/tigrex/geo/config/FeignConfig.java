@@ -9,5 +9,4 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 @EnableDiscoveryClient
 public class FeignConfig {
-    
 }

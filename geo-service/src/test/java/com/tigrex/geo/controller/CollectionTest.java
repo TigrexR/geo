@@ -2,8 +2,7 @@ package com.tigrex.geo.controller;
 
 import java.util.*;
 
-import com.tigrex.geo.entity.User;
-
+import com.tigrex.geo.entity.po.User;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -76,19 +75,6 @@ public class CollectionTest {
 
     @Test
     public void setTest(){
-
-        Set hashSet = new HashSet();
-        hashSet.add(123);
-        hashSet.add(345);
-        hashSet.add(new String("abd"));
-        hashSet.add(new String("abc"));
-        User user1 = new User(1, "123", 1);
-        User user2 = new User(1, "123", 1);
-        hashSet.add(user1);
-        hashSet.add(user2);
-        System.out.println(hashSet.size());
-        System.out.println(hashSet);
-
 
     }
 

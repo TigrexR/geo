@@ -5,13 +5,9 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.tigrex.geo.entity.po.User">
         <id column="id" property="id" />
+        <result column="code" property="code" />
         <result column="name" property="name" />
         <result column="age" property="age" />
+        <result column="gender" property="gender" />
     </resultMap>
-
-    <!-- 通用查询结果列 -->
-    <sql id="Base_Column_List">
-        id, `name`, age
-    </sql>
-
 </mapper>

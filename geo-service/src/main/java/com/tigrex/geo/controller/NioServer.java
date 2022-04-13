@@ -9,6 +9,9 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 
+/**
+ * @author linus
+ */
 public class NioServer {
 
     public static void main(String[] args) throws IOException {

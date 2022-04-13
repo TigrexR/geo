@@ -14,4 +14,11 @@ public interface IUserService {
      * @return userBO
      */
     UserBO getUser(UserQuery userQuery);
+
+    /**
+     * send user
+     * @param user user
+     * @return int
+     */
+    Integer sendUser2Kafka(UserBO user);
 }

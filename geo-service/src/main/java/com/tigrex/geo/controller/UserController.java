@@ -25,7 +25,7 @@ public class UserController {
     @Autowired
     private RedisTemplate<String, UserBO> userRedisTemplate;
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.POST)
 	public String hello() {
         return "hello world!";
     }
@@ -39,5 +39,10 @@ public class UserController {
     public UserDTO getUserFromRedis(@RequestBody() UserQuery userQuery) {
         return JacksonUtils.getJackson().convertValue(userRedisTemplate.opsForValue().get("users::" + userQuery.getId()),
                 UserDTO.class);
+    }
+
+    @RequestMapping(value = "/sendUser2Kafka", method = RequestMethod.POST)
+    public Integer sendUser2Kafka(@RequestBody() UserQuery userQuery) {
+        return userService.sendUser2Kafka(userService.getUser(userQuery));
     }
 }

@@ -1,5 +1,8 @@
 package com.tigrex.geo.controller;
 
+/**
+ * @author linus
+ */
 public class JoinThreadTest {
 
     public static void main(String[] args) throws InterruptedException {

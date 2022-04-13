@@ -78,11 +78,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.redisson</groupId>-->
-<!--			<artifactId>redisson-spring-boot-starter</artifactId>-->
-<!--			<version>${redisson.version}</version>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.redisson</groupId>
+			<artifactId>redisson-spring-boot-starter</artifactId>
+			<version>${redisson.version}</version>
+		</dependency>
 		<!-- =====================================END=================================================== -->
 
         <!-- elasticsearch -->
@@ -109,6 +109,10 @@
 			<artifactId>spring-kafka-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.apache.kafka</groupId>-->
+<!--			<artifactId>kafka-streams</artifactId>-->
+<!--		</dependency>-->
 		<!-- =====================================END=================================================== -->
 
 		<!-- netty -->
@@ -126,11 +130,23 @@
 		</dependency>
 		<!-- ======================================END================================================ -->
 
+		<!-- nacos -->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+			<version>${nacos-discovery.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+			<version>${nacos-config.version}</version>
+		</dependency>
+		<!-- ======================================END================================================ -->
+
 		<dependency>
 			<groupId>com.tigrex</groupId>
 			<artifactId>geo-sdk</artifactId>
 			<version>1.0.0</version>
-			<optional>true</optional>
 		</dependency>
 	</dependencies>
 

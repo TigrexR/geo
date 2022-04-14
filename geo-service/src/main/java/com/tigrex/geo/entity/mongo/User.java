@@ -1,11 +1,13 @@
-package com.tigrex.geo.entity.query;
-
-import java.io.Serializable;
+package com.tigrex.geo.entity.mongo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.io.Serializable;
 
 /**
  * @author linus
@@ -14,11 +16,11 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class UserQuery implements Serializable{
-    
-    private static final long serialVersionUID = 1L;
+@Document(collation = "user")
+public class User implements Serializable {
 
-    private Long id;
+    @Id
+    private Integer id;
     private String code;
     private String name;
     private Integer age;

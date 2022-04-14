@@ -13,8 +13,8 @@ import java.util.Date;
 /**
  * @author linus
  */
-@Repository
 @Slf4j
+@Repository
 public class KafkaSender<T> extends AbstractKafkaSender<T> {
 
     @Override
@@ -24,7 +24,8 @@ public class KafkaSender<T> extends AbstractKafkaSender<T> {
         message.setData(data);
         message.setDate(new Date());
         log.info("message data: {}", JacksonUtils.getJackson().writeValueAsString(message));
-        ListenableFuture<SendResult<String, String>> result = getKafkaTemplate().send(topic, JacksonUtils.getJackson().writeValueAsString(message));
+        ListenableFuture<SendResult<String, String>> result = getKafkaTemplate().send(topic,
+                JacksonUtils.getJackson().writeValueAsString(message));
         log.info("kafka result: {}", JacksonUtils.getJackson().writeValueAsString(result));
     }
 }

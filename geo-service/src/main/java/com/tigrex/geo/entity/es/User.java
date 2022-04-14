@@ -1,6 +1,4 @@
-package com.tigrex.geo.entity.query;
-
-import java.io.Serializable;
+package com.tigrex.geo.entity.es;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,11 +12,9 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class UserQuery implements Serializable{
-    
-    private static final long serialVersionUID = 1L;
+public class User {
 
-    private Long id;
+    private Integer id;
     private String code;
     private String name;
     private Integer age;

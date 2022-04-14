@@ -21,7 +21,7 @@ public class MybatisConfig {
 
     /**
      * 主数据源
-     * @return
+     * @return datasource
      */
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.hikari")

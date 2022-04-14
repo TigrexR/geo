@@ -21,4 +21,11 @@ public interface IUserService {
      * @return int
      */
     Integer sendUser2Kafka(UserBO user);
+
+    /**
+     * save uer to mongo
+     * @param user user
+     * @return int
+     */
+    UserBO saveUser2Mongo(UserBO user);
 }

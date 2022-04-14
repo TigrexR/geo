@@ -1,11 +1,12 @@
-package com.tigrex.geo.entity.query;
-
-import java.io.Serializable;
+package com.tigrex.geo.entity.kafka;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author linus
@@ -14,13 +15,11 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class UserQuery implements Serializable{
-    
+public class Message<T> implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     private Long id;
-    private String code;
-    private String name;
-    private Integer age;
-    private String gender;
+    private T data;
+    private Date date;
 }

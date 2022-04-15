@@ -2,10 +2,12 @@ package com.tigrex.geo.service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.tigrex.geo.entity.bo.UserBO;
-import com.tigrex.geo.entity.mongo.User;
+import com.tigrex.geo.entity.es.UserElasticsearch;
+import com.tigrex.geo.entity.mongo.UserMongo;
 import com.tigrex.geo.entity.query.UserQuery;
+import com.tigrex.geo.manager.es.UserElasticsearchRepository;
 import com.tigrex.geo.manager.kafka.KafkaSender;
-import com.tigrex.geo.manager.mongo.UserRepository;
+import com.tigrex.geo.manager.mongo.UserMongoRepository;
 import com.tigrex.geo.mapper.UserMapper;
 import com.tigrex.geo.service.IUserService;
 import com.tigrex.geo.utils.JacksonUtils;
@@ -25,7 +27,9 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private KafkaSender<UserBO> userSender;
     @Autowired
-    private UserRepository userRepository;
+    private UserMongoRepository userRepository;
+    @Autowired
+    private UserElasticsearchRepository userEsRepository;
 
     @Override
     @Cacheable(value = "users", key = "#userQuery.id", cacheManager = "userRedisCacheManager")
@@ -45,7 +49,13 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public UserBO saveUser2Mongo(UserBO user) {
-        return JacksonUtils.getJackson().convertValue(userRepository.save(
-                JacksonUtils.getJackson().convertValue(user, User.class)), UserBO.class);
+        return JacksonUtils.getJackson().convertValue(
+                userRepository.save(JacksonUtils.getJackson().convertValue(user, UserMongo.class)), UserBO.class);
+    }
+
+    @Override
+    public UserBO saveUser2Es(UserBO user) {
+        return JacksonUtils.getJackson().convertValue(
+                userEsRepository.save(JacksonUtils.getJackson().convertValue(user, UserElasticsearch.class)), UserBO.class);
     }
 }

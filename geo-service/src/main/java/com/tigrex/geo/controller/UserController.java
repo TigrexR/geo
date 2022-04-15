@@ -55,4 +55,9 @@ public class UserController {
     public UserVO saveUser2Mongo(@RequestBody() UserQuery userQuery) {
         return JacksonUtils.getJackson().convertValue(userService.saveUser2Mongo(userService.getUser(userQuery)), UserVO.class);
     }
+
+    @RequestMapping(value = "/saveUser2Es", method = RequestMethod.POST)
+    public UserVO saveUser2Es(@RequestBody() UserQuery userQuery) {
+        return JacksonUtils.getJackson().convertValue(userService.saveUser2Es(userService.getUser(userQuery)), UserVO.class);
+    }
 }

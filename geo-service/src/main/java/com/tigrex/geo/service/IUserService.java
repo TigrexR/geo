@@ -28,4 +28,11 @@ public interface IUserService {
      * @return int
      */
     UserBO saveUser2Mongo(UserBO user);
+
+    /**
+     * save uer to es
+     * @param user user
+     * @return int
+     */
+    UserBO saveUser2Es(UserBO user);
 }

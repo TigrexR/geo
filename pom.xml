@@ -27,6 +27,7 @@
 		<sentinel.version>2.2.7.RELEASE</sentinel.version>
 		<mybatis-plus.version>3.5.1</mybatis-plus.version>
 		<redisson.version>3.14.1</redisson.version>
+		<jwt.version>0.9.1</jwt.version>
 	</properties>
 
 	<dependencyManagement>

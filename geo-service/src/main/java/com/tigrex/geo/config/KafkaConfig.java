@@ -1,7 +1,7 @@
 package com.tigrex.geo.config;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.tigrex.geo.entity.bo.UserBO;
+import com.tigrex.geo.entity.dto.UserDTO;
 import com.tigrex.geo.entity.kafka.Message;
 import com.tigrex.geo.utils.JacksonUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ public class KafkaConfig {
     public void listen(ConsumerRecord<?, String> record) {
         Optional.ofNullable(record.value()).ifPresent(message -> {
             try {
-                Message<UserBO> value = JacksonUtils.getJackson().readValue(message, new TypeReference<Message<UserBO>>() {});
+                Message<UserDTO> value = JacksonUtils.getJackson().readValue(message, new TypeReference<Message<UserDTO>>() {});
                 log.info("【+++++++++++++++++ message = {}】", JacksonUtils.getJackson().writeValueAsString(value));
             } catch (IOException e) {
                 e.printStackTrace();

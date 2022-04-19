@@ -1,11 +1,13 @@
 package com.tigrex.geo.controller;
 
 import com.tigrex.geo.entity.bo.UserBO;
+import com.tigrex.geo.entity.dto.UserDTO;
 import com.tigrex.geo.entity.query.UserQuery;
 import com.tigrex.geo.entity.vo.UserVO;
 import com.tigrex.geo.service.IUserService;
 import com.tigrex.geo.utils.JacksonUtils;
 
+import com.tigrex.geo.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -35,20 +37,28 @@ public class UserController {
         return "hello world! I'm " + isGeo;
     }
 
+    @RequestMapping(value = "/helloUser", method = RequestMethod.POST)
+    public String helloUser() {
+        userService.asyncUser();
+        System.out.println("hello from controller");
+        return "hello world! I'm " + isGeo;
+    }
+
     @RequestMapping(value = "/getUser", method = RequestMethod.POST)
     public UserVO getUser(@RequestBody() UserQuery userQuery) {
+        userService.executeUser(userQuery);
         return JacksonUtils.getJackson().convertValue(userService.getUser(userQuery), UserVO.class);
+    }
+
+    @RequestMapping(value = "/sendUser2Kafka", method = RequestMethod.POST)
+    public Integer sendUser2Kafka(@RequestBody() UserQuery userQuery) {
+        return userService.sendUser2Kafka(JacksonUtils.getJackson().convertValue(userService.getUser(userQuery), UserDTO.class));
     }
 
     @RequestMapping(value = "/getUserFromRedis", method = RequestMethod.POST)
     public UserVO getUserFromRedis(@RequestBody() UserQuery userQuery) {
         return JacksonUtils.getJackson().convertValue(userRedisTemplate.opsForValue().get("users::" + userQuery.getId()),
                 UserVO.class);
-    }
-
-    @RequestMapping(value = "/sendUser2Kafka", method = RequestMethod.POST)
-    public Integer sendUser2Kafka(@RequestBody() UserQuery userQuery) {
-        return userService.sendUser2Kafka(userService.getUser(userQuery));
     }
 
     @RequestMapping(value = "/saveUser2Mongo", method = RequestMethod.POST)
@@ -59,5 +69,10 @@ public class UserController {
     @RequestMapping(value = "/saveUser2Es", method = RequestMethod.POST)
     public UserVO saveUser2Es(@RequestBody() UserQuery userQuery) {
         return JacksonUtils.getJackson().convertValue(userService.saveUser2Es(userService.getUser(userQuery)), UserVO.class);
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(@RequestBody() UserQuery userQuery) {
+        return JwtUtils.createToken("geo", "swc", userService.getUser(userQuery), 3600000L);
     }
 }

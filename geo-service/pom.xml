@@ -67,6 +67,10 @@
 			<artifactId>mybatis-plus-boot-starter</artifactId>
 			<version>${mybatis-plus.version}</version>
 		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>p6spy</groupId>-->
+<!--			<artifactId>p6spy</artifactId>-->
+<!--		</dependency>-->
 		<!-- =====================================END=============================================== -->
 
 		<!-- redis -->

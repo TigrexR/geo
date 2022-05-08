@@ -1,10 +1,13 @@
 package com.tigrex.geo.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.tigrex.geo.entity.bo.UserBO;
+import com.tigrex.geo.entity.bo.UserDetailsBO;
 import com.tigrex.geo.entity.dto.UserDTO;
 import com.tigrex.geo.entity.es.UserElasticsearch;
 import com.tigrex.geo.entity.mongo.UserMongo;
+import com.tigrex.geo.entity.po.User;
 import com.tigrex.geo.entity.query.UserQuery;
 import com.tigrex.geo.factory.GeoContext;
 import com.tigrex.geo.manager.es.UserElasticsearchRepository;
@@ -20,13 +23,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
  * @author linus
  */
 @Service(value = "userService")
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements IUserService, UserDetailsService {
 
     @Autowired
     private UserMapper mapper;
@@ -82,5 +89,16 @@ public class UserServiceImpl implements IUserService {
     @Async
     public void asyncUser() {
         System.out.println(Thread.currentThread().getName() + ":hello user");
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        //获取该用户的信息
+        User user = mapper.selectOne(new LambdaQueryWrapper<User>().eq(User::getCode, username));
+        if (user == null) {
+            //用户不存在报错
+            throw new UsernameNotFoundException("用户不存在");
+        }
+        return new UserDetailsBO(user.getCode(), new BCryptPasswordEncoder().encode(user.getPassword()), null);
     }
 }

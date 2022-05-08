@@ -10,7 +10,7 @@ public class MapTest {
 
     @Test
     public void testOne(){
-        User user = new User(1, "123", "123", 3, "123");
+        User user = new User(1, "123", "123", 3, "123", "123");
         Map<Integer, User> map = new HashMap(2);
         map.put(1, user);
         map.put(2, user);

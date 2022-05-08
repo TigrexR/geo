@@ -33,4 +33,6 @@ public class User implements Serializable {
     private Integer age;
     @TableField(value = "gender")
     private String gender;
+    @TableField(value = "password")
+    private String password;
 }

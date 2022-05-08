@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * @author linus
  */
-@FeignClient("UserClient")
+@FeignClient(value = "geo", contextId = "userClient", path = "/user")
 public interface UserClient {
 
     /**
      * hello
      * @return string
      */
-    @RequestMapping(value = "/user/hello", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
 	String hello();
 
     /**
@@ -26,6 +26,6 @@ public interface UserClient {
      * @param userQuery
      * @return user
      */
-    @RequestMapping(value = "/user/getUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/getUser", method = RequestMethod.POST)
     UserDTO getUser(@RequestBody() UserQuery userQuery);
 }
